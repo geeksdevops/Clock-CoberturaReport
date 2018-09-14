@@ -8,6 +8,7 @@ pipeline {
 
     stages {
         stage('install and sonar parallel') {
+	def SONARQUBE_HOST = '192.168.56.102:9000'
             steps {
                 parallel(install: {
                     sh "mvn -U clean test cobertura:cobertura -Dcobertura.report.format=xml"

@@ -7,7 +7,7 @@ pipeline {
     }
 
     stages {
-        stage('install and sonar parallel') {
+        stage('install and sonar') {
             steps {
                 parallel(install: {
                     sh "mvn -U clean test cobertura:cobertura -Dcobertura.report.format=xml"
